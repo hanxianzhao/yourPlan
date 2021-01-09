@@ -1,0 +1,41 @@
+/* pages/home/home.wxss */
+/*年月日 样式*/
+.navContainer{
+    /*使子元素水平自由布局*/
+    display: flex;
+    /*用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式 flex-start|flex-end|center|space-between|space-around|initial|inherit*/
+    justify-content: space-around;
+    /* 属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式 stretch|center|flex-start|flex-end|baseline|initial|inherit*/
+    /*align-items: center;*/
+}
+.navItem{
+    /*margin-right: 30rpx;*/
+    display: flex;
+    /*align-items: center;*/
+    /*width: 30%;*/
+    margin: 20rpx 15rpx;
+    /*width: 200rpx;*/
+    /*height: 200rpx;*/
+    text-align: center;
+    background: rgb(240, 19, 19);
+    border-radius: 30%;
+}
+
+/*给图像设置样式*/
+.iconfont{
+    /*width: 200rpx;*/
+    /*height: 200rpx;*/
+    width: 100%;
+    height: 100%;
+
+
+    /*line-height: 100rpx;*/
+    font-size: 120rpx;
+    color: #fff;
+    /*上下间距20  左右间距0*/
+    margin: 20rpx 20rpx;
+    /*margin: 0 10rpx;*/
+    background-position: center;
+}
+
+

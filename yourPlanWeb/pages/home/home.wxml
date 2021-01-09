@@ -1,0 +1,22 @@
+<!--pages/home/home.wxml-->
+<view class="navContainer">
+    <view class="navItem">
+        <image class="iconfont icon-ri"></image>
+    </view>
+    <view class="navItem">
+        <image class="iconfont icon-zhou"></image>
+    </view>
+    <view class="navItem">
+        <image class="iconfont icon-yue"></image>
+    </view>
+
+</view>
+
+<view class="navContainer">
+    <view class="navItem">
+        <image class="iconfont icon-nian"></image>
+    </view>
+    <view class="navItem">
+        <image class="iconfont icon-nian"></image>
+    </view>
+</view>
