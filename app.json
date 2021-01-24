@@ -11,10 +11,9 @@
     "navigationBarTextStyle": "black",
     "backgroundColor": "#EEEEEE",
     "enablePullDownRefresh": false
-
   },
   "style": "v2",
-  "sitemapLocation": "sit emap.json",
+  "sitemapLocation": "sitemap68.json",
   "tabBar": {
     "backgroundColor": "#FFF9FF",
     "selectedColor": "#CD5C5C",
