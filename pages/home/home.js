@@ -5,8 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // 'test_token':wx.getStorage({
+    //   key: 'token',
+    // })
+      test_token:'qwe'
   },
+
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -62,5 +67,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  test_token_func:function (e) {
+      var that = this
+      wx.getStorage({
+          key: 'token',
+          success:function(res) {
+            console.log(res.data);
+              that.setData({
+                  test_token: res.data
+              })
+          }
+        })
   }
 })

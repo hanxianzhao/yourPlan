@@ -1,7 +1,7 @@
 <!--pages/home/home.wxml-->
 <view class="navContainer">
     <view class="navItem">
-        <image class="iconfont icon-ri"></image>
+        <image class="iconfont icon-ri" bindtap="test_token_func"></image>
     </view>
     <view class="navItem">
         <image class="iconfont icon-zhou"></image>
@@ -20,3 +20,4 @@
         <image class="iconfont icon-nian"></image>
     </view>
 </view>
+<view>{{test_token}}</view>

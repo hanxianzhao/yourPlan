@@ -2,17 +2,10 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    var logs = wx.getStorageSync('logs') || [];
+    logs.unshift(Date.now());
+    wx.setStorageSync('logs', logs);
 
-    // 登录
-    // wx.login({
-    //   success: res => {
-    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
-
-    //   }
-    // })
     wx.login({
       success (res) {
         if (res.code) {
@@ -26,6 +19,13 @@ App({
             },
             header: {
               "content-type":"application/x-www-form-urlencoded"
+            },
+            success(res1) {
+              console.log(res1.data.token)
+              wx.setStorage({
+                data: res1.data.token,
+                key: 'token',
+              })
             }
           })
         } else {
