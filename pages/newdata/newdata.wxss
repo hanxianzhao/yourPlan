@@ -1,0 +1,42 @@
+/* pages/newdata/newdata.wxss */
+.father_view {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  /*border:2rpx solid red;*/
+}
+
+.input_data {
+  outline-style: none;
+  height: 50%;
+  width: 60%;
+  border:2px solid green;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "Microsoft soft";
+}
+
+.picker_view_first {
+  width:10%;
+  height:50%;
+  /*border:2px solid black;*/
+}
+
+.picker_view_second {
+  width:30%;
+  height:50%;
+  font-size: 15px;
+  /*border:2px solid black;*/
+}
+
+.picker_childer {
+  line-height:30px;
+  text-align:center;
+  font-size: 15px;
+  /*margin-left: rpx;*/
+}
+
+/*textarea{*/
+  /*fixed:true;*/
+/**/
+/*}*/
