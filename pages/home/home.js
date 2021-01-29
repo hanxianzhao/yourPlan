@@ -70,15 +70,8 @@ Page({
   },
 
   test_token_func:function (e) {
-      var that = this
-      wx.getStorage({
-          key: 'token',
-          success:function(res) {
-            console.log(res.data);
-              that.setData({
-                  test_token: res.data
-              })
-          }
-        })
+      this.setData({
+        test_token:wx.getStorageSync('token'),
+      })
   }
 })

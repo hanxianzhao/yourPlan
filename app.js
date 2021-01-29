@@ -21,11 +21,8 @@ App({
               "content-type":"application/x-www-form-urlencoded"
             },
             success(res1) {
-              console.log(res1.data.token)
-              wx.setStorage({
-                data: res1.data.token,
-                key: 'token',
-              })
+              console.log(res1.data.token);
+              wx.setStorageSync('token', res1.data.token)
             }
           })
         } else {

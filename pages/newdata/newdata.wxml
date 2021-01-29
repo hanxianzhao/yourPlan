@@ -10,7 +10,7 @@
                 <view wx:for="{{chooise}}" wx:key="*this">{{item}}</view>
             </picker-view-column>
         </picker-view>
-        <picker-view class='picker_view_second' bindchange="bindChange1" name="picker2">
+        <picker-view class='picker_view_second' bindchange="bindChangeOther" name="picker2">
             <picker-view-column class='picker_childer'>
                 <view wx:for="{{chooise_other}}" wx:key="*this">{{item}}</view>
             </picker-view-column>
