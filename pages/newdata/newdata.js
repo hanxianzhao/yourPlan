@@ -58,9 +58,9 @@ Page({
         chooise: ['日', '周', '月', '年'],
         chooise_other: month_days_list,
         // 第一个选择器选择后的值，用来post请求
-        first_picker_value:'日',
+        first_picker_value: '日',
         // 第二个选择器选择后的值，用来post请求
-        second_picker_value:month_days_list[0]
+        second_picker_value: month_days_list[0]
     },
 
 
@@ -69,7 +69,7 @@ Page({
         var use_picker = this.data.chooise[val[0]];
         if (use_picker === "周") {
             this.setData({
-                chooise_other: ["本周", '下周']
+                chooise_other: ['本周', '下周', '每周']
             })
         } else if (use_picker === "月") {
             this.setData({
@@ -85,39 +85,40 @@ Page({
             })
         }
         this.setData({
-            first_picker_value:use_picker
+            first_picker_value: use_picker,
         })
     },
-    bindChangeOther:function(e){
+    bindChangeOther: function (e) {
+        // Todo 此处如果界面只选择了第一个选择框，不选择第二个，则会导致第二个框的数据是初始的赋值，需要修改
         const val = e.detail.value;
         this.setData({
-            second_picker_value:this.data.chooise_other[val[0]]
+            second_picker_value: this.data.chooise_other[val[0]]
         })
 
 
     },
-    submit:function(e){
-        console.log(this.data.first_picker_value);
-        console.log(this.data.second_picker_value);
-        console.log(e.detail.value.textarea);
-        console.log(this.data.chooise[0]);
+    submit: function (e) {
+        // console.log(this.data.first_picker_value);
+        // console.log(this.data.second_picker_value);
+        // console.log(e.detail.value.textarea);
+        // console.log(this.data.chooise[0]);
         wx.request({
-            url:'http://127.0.0.1:5000/addplan',
-            method:'POST',
+            url: 'http://127.0.0.1:5000/addplan',
+            method: 'POST',
             data: {
-                plan_content:e.detail.value.textarea,
-                plan_picker_first:this.data.first_picker_value,
-                plan_picker_second:this.data.second_picker_value
+                plan_content: e.detail.value.textarea,
+                plan_picker_first: this.data.first_picker_value,
+                plan_picker_second: this.data.second_picker_value
             },
-            header:{
-                // 'context-type': 'application/json',
+            header: {
+                'context-type': 'application/json;charset=utf-8',
 
-                "content-type":"application/x-www-form-urlencoded",
+                // "content-type":"application/x-www-form-urlencoded",
 
                 'token': wx.getStorageSync('token'),
             },
             success(res) {
-              console.log(res.data);
+                console.log(res.data);
             }
 
         })
