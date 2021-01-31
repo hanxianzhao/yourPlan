@@ -5,7 +5,7 @@
         <textarea type="text" class='input_data' placeholder='{{place_holder}}'
                   placeholder-style="color:#F6EFF9" name="textarea"></textarea>
         <!--<picker-view class='picker_view_first' indicator-style="height:30px;" value="{{value}}" bindchange="bindChange">-->
-        <picker-view class='picker_view_first' bindchange="bindChange" name="picker1">
+        <picker-view class='picker_view_first' bindchange="bindChange" name="picker1" value="{{picker_view_first_value}}">
             <picker-view-column class='picker_childer'>
                 <view wx:for="{{chooise}}" wx:key="*this">{{item}}</view>
             </picker-view-column>
@@ -17,7 +17,7 @@
         </picker-view>
         <!-- 先有选择框（日 周 月），如果选择日的话需要增加日期选择 -->
     </view>
-    <button formType='submit'>新建</button>
+    <button formType='submit' class='add_plan_button'>创建</button>
 </form>
 
 <!--<button bind>-->

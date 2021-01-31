@@ -19,5 +19,7 @@
     <view class="navItem">
         <image class="iconfont icon-nian"></image>
     </view>
+    <view class="navItem">
+        <image class="iconfont icon-nian"></image>
+    </view>
 </view>
-<view>{{test_token}}</view>

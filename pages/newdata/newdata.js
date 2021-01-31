@@ -1,6 +1,6 @@
 // pages/newdata/newdata.js
 var util = require('../../utils/util.js');
-
+var app = getApp();
 // 获取当前时间
 var current_data = util.formatData(new Date());
 
@@ -60,7 +60,9 @@ Page({
         // 第一个选择器选择后的值，用来post请求
         first_picker_value: '日',
         // 第二个选择器选择后的值，用来post请求
-        second_picker_value: month_days_list[0]
+        second_picker_value: month_days_list[0],
+        // Todo 选择器暂时还不能直接使用表单传递，找东西学习下
+        // picker_view_first_value: 'qweqweqwe'
     },
 
 
@@ -100,10 +102,10 @@ Page({
     submit: function (e) {
         // console.log(this.data.first_picker_value);
         // console.log(this.data.second_picker_value);
-        // console.log(e.detail.value.textarea);
+        // console.log(e.detail.value);
         // console.log(this.data.chooise[0]);
         wx.request({
-            url: 'http://127.0.0.1:5000/addplan',
+            url: app.globalData.host + '/addplan',
             method: 'POST',
             data: {
                 plan_content: e.detail.value.textarea,
@@ -112,13 +114,16 @@ Page({
             },
             header: {
                 'context-type': 'application/json;charset=utf-8',
-
-                // "content-type":"application/x-www-form-urlencoded",
-
                 'token': wx.getStorageSync('token'),
             },
             success(res) {
                 console.log(res.data);
+                // textarea.value = ''
+                wx.showToast({
+                  title: '创建任务成功！', // 标题
+                  icon: 'success',  // 图标类型，默认success
+                  duration: 1500  // 提示窗停留时间，默认1500ms
+                })
             }
 
         })
